@@ -1,4 +1,4 @@
-FROM docker.io/bitnami/node:latest as builder
+FROM node:12.18-alpine as builder
 ENV NODE_ENV="production"
 
 # Copy app's source code to the /app directory
@@ -10,7 +10,7 @@ WORKDIR /app
 # Install Node.js dependencies defined in '/app/packages.json'
 RUN npm install
 
-FROM docker.io/bitnami/node:latest
+FROM node:12.18-alpine
 ENV NODE_ENV="production"
 COPY --from=builder /app /app
 WORKDIR /app
