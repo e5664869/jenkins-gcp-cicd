@@ -17,20 +17,20 @@
                 checkout scm
             }
         }
-/*
+
         stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("<<Your DockerHub username>>/hello:${env.BUILD_ID}")
+                    myapp = docker.build("ganeshmete11@gmail.com/hello:${env.BUILD_ID}")
                 }
             }
         }
-*/
+
 /*
         stage("Push image") {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerID') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'DockerId') {
                             myapp.push("latest")
                             myapp.push("${env.BUILD_ID}")
                     }
