@@ -1,5 +1,10 @@
  pipeline {
-    agent {label 'Slave-Node'}
+    agent {
+    node {
+        label 'Slave-Node'
+       
+    }
+}
     environment {
         PROJECT_ID = 'terraform-on-gcp-403504'
         CLUSTER_NAME = '<<Your GKE Cluster Name>>'
