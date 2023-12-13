@@ -16,7 +16,7 @@
         stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("ganeshmete11@gmail.com/hello:${env.BUILD_ID}")
+                    myapp = docker.build("ganeshmete11/hello:${env.BUILD_ID}")
                 }
             }
         }
