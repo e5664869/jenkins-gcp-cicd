@@ -1,10 +1,10 @@
  pipeline {
     agent any
     environment {
-        PROJECT_ID = '<<Your GCP Project ID>>'
+        PROJECT_ID = 'terraform-on-gcp-403504'
         CLUSTER_NAME = '<<Your GKE Cluster Name>>'
-        LOCATION = '<<Your GKE Cluster Location>>'
-        CREDENTIALS_ID = 'multi-k8s'
+        LOCATION = 'us-central1'
+        CREDENTIALS_ID = 'terraform-on-gcp-403504'
     }
     stages {
         stage("Checkout code") {
@@ -12,6 +12,7 @@
                 checkout scm
             }
         }
+/*
         stage("Build image") {
             steps {
                 script {
@@ -19,6 +20,8 @@
                 }
             }
         }
+*/
+/*
         stage("Push image") {
             steps {
                 script {
@@ -28,12 +31,15 @@
                     }
                 }
             }
-        }        
+        }
+*/
+/*
         stage('Deploy to GKE') {
             steps{
                 sh "sed -i 's/hello:latest/hello:${env.BUILD_ID}/g' deployment.yaml"
                 step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
             }
         }
+*/
     }    
 } 
