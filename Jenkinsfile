@@ -1,9 +1,6 @@
  pipeline {
-    agent {
-    node {
-        label 'Slave-Node'
-       
-    }
+    agent  any 
+    
 }
     environment {
         PROJECT_ID = 'terraform-on-gcp-403504'
