@@ -4,7 +4,7 @@
         PROJECT_ID = 'terraform-on-gcp-403504'
         CLUSTER_NAME = 'autopilot-cluster-1'
         LOCATION = 'us-central1'
-        CREDENTIALS_ID = 'terraform-on-gcp-403504'
+        CREDENTIALS_ID = 'terraform-on-gcp'
     }
     stages {
         stage("Checkout code") {
